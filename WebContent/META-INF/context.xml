@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Context>
+<!-- ConnectionPool을 이용한 방법 -->
+   <Resource
+      name="jdbc/webstudy09"
+      auth="Container"
+      type="oracle.jdbc.pool.OracleDataSource"
+      factory="oracle.jdbc.pool.OracleDataSourceFactory"
+      driverClassName="oracle.jdbc.OracleDriver"
+      url="jdbc:oracle:thin:@127.0.0.1:1521:orcl"
+      user="jsp_study"
+      password="rootroot"
+      removeAbandoned="true"
+      removeAbandonedTimeout="5"
+      logAbandoned="true"
+   />
+<!-- Connection을 이용한 방법 -->
+  <!--  <Resource
+      name="jdbc/oracle3"
+      auth="Container"
+      type="javax.sql.DataSource"
+      driverClassName="oracle.jdbc.OracleDriver"
+      url="jdbc:oracle:thin:@127.0.0.1:1521:orcl"
+      username="jsp_study"
+      password="rootroot"
+       />
+       maxTotal="30"
+      maxIdle="30"
+      maxWaitMillis="10000" -->
+   
+      
+</Context>

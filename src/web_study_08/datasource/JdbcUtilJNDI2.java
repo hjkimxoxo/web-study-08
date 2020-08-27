@@ -1,0 +1,35 @@
+package web_study_08.datasource;
+
+import java.sql.Connection;
+import java.sql.SQLException;
+
+import javax.naming.InitialContext;
+import javax.naming.NamingException;
+import javax.sql.DataSource;
+
+public class JdbcUtilJNDI2 {
+	private static DataSource ds;
+	
+	private JdbcUtilJNDI2() {}
+	
+	static {
+		try {
+		InitialContext ic= new InitialContext(); //1. JNDI 서버 객체 생성
+		ds = (DataSource) ic.lookup("java:comp/env/jdbc/oracle2"); //2. lookup()
+		System.out.println("ds : " + ds);
+		} catch (NamingException e) {
+		e.printStackTrace();
+		} 
+	}
+	
+	
+	public static Connection getConnection() {
+		try {
+		return ds.getConnection();
+		} catch (SQLException e) {
+		e.printStackTrace();
+		}
+		return null;
+		}
+
+}
