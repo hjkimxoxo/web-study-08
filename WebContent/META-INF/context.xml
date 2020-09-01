@@ -2,7 +2,7 @@
 <Context>
 <!-- ConnectionPool을 이용한 방법 -->
    <Resource
-      name="jdbc/webstudy09"
+      name="jdbc/oracle2"
       auth="Container"
       type="oracle.jdbc.pool.OracleDataSource"
       factory="oracle.jdbc.pool.OracleDataSourceFactory"
@@ -15,7 +15,7 @@
       logAbandoned="true"
    />
 <!-- Connection을 이용한 방법 -->
-  <!--  <Resource
+    <Resource
       name="jdbc/oracle3"
       auth="Container"
       type="javax.sql.DataSource"
